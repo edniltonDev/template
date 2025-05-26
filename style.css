@@ -1,0 +1,140 @@
+* {
+ 
+  box-sizing: border-box;
+  font-size: 12px;
+}
+ 
+body {
+  background-color:  #c0c0c0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+ 
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #333;
+}
+ 
+.tabs button {
+  background-color: #555;
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  min-width: 150px;
+}
+ 
+.tabs button:hover,
+.tabs button.active {
+  background-color: #808080;
+}
+ 
+.tab-content {
+  display: none;
+  padding: 10px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+}
+ 
+.tab-content.active {
+  display: block;
+}
+ 
+/*Ajuste para a aba FCA*/
+#fcaNOC label,
+#fcaNOC input,
+#fcaNOC select{
+	display: flex;
+	flex-direction: column;
+}
+ 
+/* Layout para inputs, selects e textareas ao lado dos labels */
+#templateStatus label,
+#eventoNOC label {
+  display: inline-block;
+  vertical-align: top;
+  width: 180px;
+  margin-bottom: 6px;
+}
+
+#massivoNoc select{
+  margin-top: 0;
+}
+ 
+#templateStatus textarea,
+#eventoNOC textarea,
+#templateStatus select,
+#eventoNOC select,
+#templateStatus input,
+#eventoNOC input {
+  display: inline-block;
+  width: calc(100% - 190px);
+  margin-bottom: 4px;
+  vertical-align: top;
+  font-size: 14px;
+  padding: 4px;
+  height: 24px;
+}
+ 
+#templateStatus textarea,
+#eventoNOC textarea {
+  resize: vertical;
+  height: 20px;
+  max-height: 80px;
+}
+ 
+#templateStatus select[multiple],
+#eventoNOC select[multiple] {
+  height: 110px;
+}
+ 
+/* Botões */
+#templateStatus button,
+#eventoNOC button {
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-right: 8px;
+  margin-top: 10px;
+}
+ 
+/* Ajustes para elementos ocultos ou especiais */
+#complementoProtegido,
+#complementoProtegidoNOC,
+#complementoRiscoOperacional,
+#complementoRiscoOperacionalNOC,
+#causaOutra,
+#causaOutraNOC,
+#statusOutra,
+#statusOutraNOC {
+  display: none;
+  width: 100% !important;
+  margin-top: 5px;
+}
+ 
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  #templateStatus label,
+  #eventoNOC label {
+    width: 100%;
+  }
+ 
+  #templateStatus textarea,
+  #eventoNOC textarea,
+  #templateStatus select,
+  #eventoNOC select,
+  #templateStatus input,
+  #eventoNOC input {
+    width: 100%;
+  }
+ 
+  .tabs button {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
